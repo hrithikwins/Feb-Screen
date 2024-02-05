@@ -1,112 +1,114 @@
 import Image from "next/image";
 
+const Profiles = ({ man }: any) => {
+  return (
+    <div className="bg-[#FFDBE8] lg:px-8 px-3 rounded-[10px]  py-2 lg:py-4">
+      {man ? (
+        <Image
+          src={"/Images/man.svg"}
+          alt="Man Image"
+          width={60}
+          height={40}
+          className="cursor-pointer"
+        />
+      ) : (
+        <Image
+          src={"/Images/women.svg"}
+          alt="Man Image"
+          className="cursor-pointer"
+          width={60}
+          height={40}
+        />
+      )}
+    </div>
+  );
+};
+
+export const dynamic = "force-dynamic";
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <main className="h-screen  flex items-center lg:px-20 px-4    justify-center bg-[#fff3f8]">
+      <div className="bg-pink-500 lg:scale-100 scale-[20%] blur-lg  h-[845px] left-[-400px] top-[-400px] opacity-10 rounded-full backdrop-blur-lg w-[845px] hidden lg:block absolute z-50"></div>
+      {/* <div className="bg-pink-400 lg:scale-100 scale-[20%] blur-lg   h-[845px] right-[0px] bottom-[0px] opacity-15 rounded-full backdrop-blur-lg w-[845px] absolute z-50"></div> */}
+      <div className="flex flex-row  justify-center lg:gap-x-32  w-screen">
+        <div className="w-1/3 lg:block hidden  ">
+          <Image
+            src={"/Images/Desktop_CouplePic.png"}
+            style={{ width: "100%" }}
+            width={500}
+            height={500}
+            className="scale-110"
+            alt="Couple Image"
+          />
         </div>
-      </div>
+        <div className="flex flex-col   px-[2%]  lg:w-1/3 w-full lg:py-14 items-center">
+          <Image
+            src={"/Images/Logo.svg"}
+            width={140}
+            height={100}
+            style={{ width: "30%" }}
+            alt="Couple Image"
+          />
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+          <div className="mt-5 lg:mt-10  w-full ">
+            <label
+              htmlFor="name"
+              className="text-[#4A012E] my-2 font-[500]  text-sm "
+            >
+              Your name
+            </label>
+            <div className="rounded-[15px] w-full mt-1  px-4 bg-white flex items-center py-3 border-[2px] border-[#4A012E]">
+              <svg width="20" height="20" viewBox="0 0 30 30" fill="none">
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M21.6175 9.11382C21.6175 12.7851 18.6739 15.7289 15 15.7289C11.3274 15.7289 8.38252 12.7851 8.38252 9.11382C8.38252 5.44253 11.3274 2.5 15 2.5C18.6739 2.5 21.6175 5.44253 21.6175 9.11382ZM15 27.5C9.57797 27.5 5 26.6187 5 23.2187C5 19.8174 9.60673 18.9674 15 18.9674C20.4233 18.9674 25 19.8487 25 23.2487C25 26.65 20.3933 27.5 15 27.5Z"
+                  fill="#4A012E"
+                />
+              </svg>
+              <input
+                type="text"
+                name="name"
+                className="focus:outline-none w-fit px-2 placeholder:text-sm placeholder:text-[#4A012E80] font-[600] "
+                placeholder="Enter your name"
+              />
+            </div>
+          </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+          <div className="mt-5  w-full ">
+            <label
+              htmlFor="name"
+              className="text-[#4A012E] my-2 font-[500]  text-sm "
+            >
+              Select your avatar
+            </label>
+            <div className="rounded-[15px] w-full mt-1  px-4 bg-white flex items-center py-3 border-[2px] border-[#4A012E]">
+              <div className="grid grid-flow-row grid-cols-3 gap-5">
+                <Profiles man={true} />
+                <Profiles man={true} />
+                <Profiles man={true} />
+                <Profiles man={false} />
+                <Profiles man={false} />
+                <Profiles man={false} />
+              </div>
+            </div>
+          </div>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+          <Image
+            src={"/Images/Mobile_CouplePic.svg"}
+            style={{ width: "100%", height: "40%" }}
+            width={200}
+            height={200}
+            className=" lg:hidden block mt-10 scale-90"
+            alt="Couple Image"
+          />
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
+          <div className="w-full">
+            <button className="w-full bg-[#4A012E] text-white py-3 text-center font-[700] text-[18px] rounded-[15px] mt-8">
+              Let’s start virtual dates
+            </button>
+          </div>
+        </div>
       </div>
     </main>
   );
