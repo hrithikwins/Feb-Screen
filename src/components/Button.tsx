@@ -1,13 +1,16 @@
-import React from 'react'
+import React from "react";
+import { Slide } from "react-awesome-reveal";
 
 const Button = () => {
   return (
     <div className="w-full">
-      <button className="w-full bg-[#4A012E] text-white py-3 text-center font-[700] text-[18px] rounded-[15px] mt-8">
-        Let’s start virtual dates
-      </button>
+      <Slide triggerOnce className="w-full" direction="right">
+        <button className="w-full bg-[#4A012E] text-white py-3 text-center font-[700] text-[18px] rounded-[15px] mt-8">
+          Let’s start virtual dates
+        </button>
+      </Slide>
     </div>
   );
-}
+};
 
-export default Button
+export default Button;
