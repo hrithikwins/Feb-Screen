@@ -82,7 +82,7 @@ export default function Home() {
         </div>
         <div className="flex flex-col   px-[2%]  lg:w-1/3 w-full lg:py-14 items-center">
           <Slide
-            direction="right"
+            direction="down"
             className=" flex flex-col items-center  w-full"
             triggerOnce
           >
