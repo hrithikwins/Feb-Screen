@@ -1,0 +1,80 @@
+.main {
+  background-image: url("/Images/poster.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  max-width: 400px;
+  height: 100vh;
+}
+
+.content {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  padding: 14px;
+  color: white;
+  max-width: 400px;
+}
+
+.name {
+  font-size: 26px;
+  font-weight: 500;
+}
+
+.flexdiv {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+
+.flag {
+  width: 40px;
+  border-radius: 4px;
+  height: 24px;
+}
+.about {
+  margin-top: 10px;
+}
+.aboutme {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.aboutcontent {
+  font-size: 12px;
+  font-weight: 300;
+}
+.button {
+  width: 100%;
+  background-color: white;
+  color: #4a012e;
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.tags {
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+.tag {
+  background-color: gray;
+  border-radius: 20px;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 12px;
+  margin-right: 10px;
+}
+
+.views {
+  max-width: 400px;
+}
