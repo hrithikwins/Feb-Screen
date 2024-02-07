@@ -60,15 +60,15 @@ export default function Home() {
     setNumber(id);
     if (id > 3) {
       window.open(
-        `https://onthemoons.graphity.world/vHRvhQv/onthemoons?avatarId=male_" +
+        `https://onthemoons.graphity.world/vHRvhQv/onthemoons?avatarId=male_` +
           id +
-          "&gender=male&name=${name}`
+          `&gender=male&name=${name}`
       );
     } else {
       window.open(
-        `https://onthemoons.graphity.world/vHRvhQv/onthemoons?avatarId=female_" +
+        `https://onthemoons.graphity.world/vHRvhQv/onthemoons?avatarId=female_` +
           id +
-          "&gender=female&name=${name}`
+          `&gender=female&name=${name}`
       );
     }
     console.log("Profile clicked!");
