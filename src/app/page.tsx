@@ -9,7 +9,7 @@ const Profiles = ({ id, man }: any) => {
     <div className="bg-[#FFDBE8] cursor-pointer w-full  flex items-center justify-center rounded-[10px] ">
       {man ? (
         <Image
-          src={`/Images/male_${id}.jpg`}
+          src={`/Images/male_${id}-removebg-preview.png`}
           alt="Man Image"
           width={60}
           height={40}
@@ -17,7 +17,7 @@ const Profiles = ({ id, man }: any) => {
         />
       ) : (
         <Image
-          src={`/Images/female_${id-3}.jpg`}
+          src={`/Images/female_${id - 3}-removebg-preview.png`}
           alt="Man Image"
           className="cursor-pointer my-2"
           width={60}
@@ -58,15 +58,22 @@ export default function Home() {
   const [number, setNumber] = useState(-1);
   const handleClick = (id: number) => {
     setNumber(id);
-    if(id > 3){
-        window.open("https://onthemoons.graphity.world/vHRvhQv/onthemoons?avatarId=male_" + id + "&gender=male&name=");
-    }else{
-
-        window.open("https://onthemoons.graphity.world/vHRvhQv/onthemoons?avatarId=female_" + id + "&gender=female&name=");
+    if (id > 3) {
+      window.open(
+        `https://onthemoons.graphity.world/vHRvhQv/onthemoons?avatarId=male_" +
+          id +
+          "&gender=male&name=${name}`
+      );
+    } else {
+      window.open(
+        `https://onthemoons.graphity.world/vHRvhQv/onthemoons?avatarId=female_" +
+          id +
+          "&gender=female&name=${name}`
+      );
     }
     console.log("Profile clicked!");
   };
-
+  const [name, setName] = useState("");
   return (
     <main className="min-h-screen  flex items-center lg:px-20 px-4   py-10 lg:py-0  justify-center bg-[#fff3f8]">
       <div className="bg-pink-500 lg:scale-100 scale-[20%] blur-lg  h-[845px] left-[-400px] top-[-400px] opacity-10 rounded-full backdrop-blur-lg w-[845px] hidden lg:block absolute z-50"></div>
@@ -119,6 +126,9 @@ export default function Home() {
                 <input
                   type="text"
                   name="name"
+                  onChange={(e) => {
+                    setName(e.target.value);
+                  }}
                   className="focus:outline-none w-fit px-2 placeholder:text-sm placeholder:text-[#4A012E80] font-[600] "
                   placeholder="Enter your name"
                 />
@@ -154,7 +164,7 @@ export default function Home() {
                             direction="down"
                             delay={300}
                           >
-                            <Profiles man={item.men}  id={item.id}/>
+                            <Profiles man={item.men} id={item.id} />
                           </Fade>
                         </div>
                       );
