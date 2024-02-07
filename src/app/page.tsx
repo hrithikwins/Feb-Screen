@@ -4,12 +4,12 @@ import Image from "next/image";
 import { useState } from "react";
 import { Fade, Slide } from "react-awesome-reveal";
 
-const Profiles = ({ man }: any) => {
+const Profiles = ({ id, man }: any) => {
   return (
     <div className="bg-[#FFDBE8] cursor-pointer w-full  flex items-center justify-center rounded-[10px] ">
       {man ? (
         <Image
-          src={"/Images/man.svg"}
+          src={`/Images/male_${id}.jpg`}
           alt="Man Image"
           width={60}
           height={40}
@@ -17,7 +17,7 @@ const Profiles = ({ man }: any) => {
         />
       ) : (
         <Image
-          src={"/Images/women.svg"}
+          src={`/Images/female_${id-3}.jpg`}
           alt="Man Image"
           className="cursor-pointer my-2"
           width={60}
@@ -58,6 +58,12 @@ export default function Home() {
   const [number, setNumber] = useState(-1);
   const handleClick = (id: number) => {
     setNumber(id);
+    if(id > 3){
+        window.open("https://onthemoons.graphity.world/vHRvhQv/onthemoons?avatarId=male_" + id + "&gender=male&name=");
+    }else{
+
+        window.open("https://onthemoons.graphity.world/vHRvhQv/onthemoons?avatarId=female_" + id + "&gender=female&name=");
+    }
     console.log("Profile clicked!");
   };
 
@@ -148,7 +154,7 @@ export default function Home() {
                             direction="down"
                             delay={300}
                           >
-                            <Profiles man={item.men} />
+                            <Profiles man={item.men}  id={item.id}/>
                           </Fade>
                         </div>
                       );
