@@ -4,7 +4,7 @@ import { Slide } from "react-awesome-reveal";
 const Button = () => {
   return (
     <div className="w-full">
-      <Slide triggerOnce className="w-full" direction="down">
+      <Slide triggerOnce className="w-full" direction="up">
         <button className="w-full bg-[#4A012E] text-white py-3 text-center font-[700] text-[18px] rounded-[15px] mt-8">
           Let’s start virtual dates
         </button>

@@ -6,20 +6,20 @@ import { Fade, Slide } from "react-awesome-reveal";
 
 const Profiles = ({ man }: any) => {
   return (
-    <div className="bg-[#FFDBE8] lg:px-8 px-3 flex items-center justify-center rounded-[10px]  py-2 lg:py-4">
+    <div className="bg-[#FFDBE8] cursor-pointer w-full  flex items-center justify-center rounded-[10px] ">
       {man ? (
         <Image
           src={"/Images/man.svg"}
           alt="Man Image"
           width={60}
           height={40}
-          className="cursor-pointer"
+          className="cursor-pointer my-2"
         />
       ) : (
         <Image
           src={"/Images/women.svg"}
           alt="Man Image"
-          className="cursor-pointer"
+          className="cursor-pointer my-2"
           width={60}
           height={40}
         />
@@ -65,7 +65,7 @@ export default function Home() {
     <main className="min-h-screen  flex items-center lg:px-20 px-4   py-10 lg:py-0  justify-center bg-[#fff3f8]">
       <div className="bg-pink-500 lg:scale-100 scale-[20%] blur-lg  h-[845px] left-[-400px] top-[-400px] opacity-10 rounded-full backdrop-blur-lg w-[845px] hidden lg:block absolute z-50"></div>
 
-      <div className="flex flex-row  justify-center lg:gap-x-32  w-screen">
+      <div className="flex flex-row  justify-center items-center lg:gap-x-32  w-screen">
         <div className="w-1/3 lg:block hidden  ">
           <Slide triggerOnce direction="left">
             <Fade triggerOnce>
@@ -126,9 +126,9 @@ export default function Home() {
               >
                 Select your avatar
               </label>
-              <div className="rounded-[15px] w-full mt-1  px-4 bg-white flex items-center py-3 border-[2px] border-[#4A012E]">
-                <Slide direction="down">
-                  <div className="grid grid-flow-row  w-full grid-cols-3 gap-5">
+              <div className="rounded-[15px]  w-full mt-1  px-4 bg-white  items-center py-3 border-[2px] border-[#4A012E]">
+                <Slide direction="down" triggerOnce>
+                  <div className="grid grid-flow-row  justify-between w-full grid-cols-3 gap-5">
                     {data.map((item: any, index: any) => {
                       return (
                         <div
@@ -142,7 +142,12 @@ export default function Home() {
                           }}
                           key={index}
                         >
-                          <Fade damping={0.1} direction="down" delay={200}>
+                          <Fade
+                            triggerOnce
+                            damping={0.1}
+                            direction="down"
+                            delay={300}
+                          >
                             <Profiles man={item.men} />
                           </Fade>
                         </div>
