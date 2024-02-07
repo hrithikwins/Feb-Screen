@@ -58,21 +58,18 @@ export default function Home() {
   const [number, setNumber] = useState(-1);
   const handleClick = (id: number) => {
     setNumber(id);
-    if (id > 3) {
-      window.open(
-        `https://onthemoons.graphity.world/vHRvhQv/onthemoons?avatarId=male_` +
-          id +
-          `&gender=male&name=${name}`
-      );
-    } else {
-      window.open(
-        `https://onthemoons.graphity.world/vHRvhQv/onthemoons?avatarId=female_` +
-          id +
-          `&gender=female&name=${name}`
-      );
-    }
     console.log("Profile clicked!");
   };
+
+  function handleEntry(){
+        if (number > 3) {
+          window.open(`https://onthemoons.graphity.world/vHRvhQv/onthemoons?avatarId=female_` + (number -3 ) + `&gender=male&name=${name}`);
+        } else {
+          window.open(`https://onthemoons.graphity.world/vHRvhQv/onthemoons?avatarId=male_` + number+ `&gender=female&name=${name}`);
+        }
+
+
+  }
   const [name, setName] = useState("");
   return (
     <main className="min-h-screen  flex items-center lg:px-20 px-4   py-10 lg:py-0  justify-center bg-[#fff3f8]">
@@ -184,7 +181,7 @@ export default function Home() {
             alt="Couple Image"
           />
 
-          <Button />
+          <Button onClick={handleEntry}/>
         </div>
       </div>
     </main>
