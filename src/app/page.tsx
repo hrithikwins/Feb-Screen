@@ -79,36 +79,16 @@ export default function Home() {
         <div className="w-1/3 lg:block hidden  ">
           <Slide triggerOnce direction="left">
             <Fade triggerOnce>
-              <Image
-                src={"/Images/Desktop_CouplePic.png"}
-                style={{ width: "100%" }}
-                width={500}
-                height={500}
-                className="scale-110"
-                alt="Couple Image"
-              />
+              <Image src={"/Images/Desktop_CouplePic.png"} style={{ width: "100%" }} width={500} height={500} className="scale-110" alt="Couple Image" />
             </Fade>
           </Slide>
         </div>
         <div className="flex flex-col   px-[2%]  lg:w-1/3 w-full lg:py-14 items-center">
-          <Slide
-            direction="down"
-            className=" flex flex-col items-center  w-full"
-            triggerOnce
-          >
-            <Image
-              src={"/Images/Logo.svg"}
-              width={140}
-              height={100}
-              style={{ width: "30%" }}
-              alt="Couple Image"
-            />
+          <Slide direction="down" className=" flex flex-col items-center  w-full" triggerOnce>
+            <Image src={"/Images/Logo.svg"} width={140} height={100} style={{ width: "30%" }} alt="Couple Image" />
 
             <div className="mt-5 lg:mt-10  w-full ">
-              <label
-                htmlFor="name"
-                className="text-[#4A012E] my-2 font-[500]  text-sm "
-              >
+              <label htmlFor="name" className="text-[#4A012E] my-2 font-[500]  text-sm ">
                 Your name
               </label>
               <div className="rounded-[15px] w-full mt-1  px-4 bg-white flex items-center py-3 border-[2px] border-[#4A012E]">
@@ -133,10 +113,7 @@ export default function Home() {
             </div>
 
             <div className="mt-5  w-full ">
-              <label
-                htmlFor="name"
-                className="text-[#4A012E] my-2 font-[500]  text-sm "
-              >
+              <label htmlFor="name" className="text-[#4A012E] my-2 font-[500]  text-sm ">
                 Select your avatar
               </label>
               <div className="rounded-[15px]  w-full mt-1  px-4 bg-white  items-center py-3 border-[2px] border-[#4A012E]">
@@ -145,22 +122,13 @@ export default function Home() {
                     {data.map((item: any, index: any) => {
                       return (
                         <div
-                          className={
-                            item.id == number
-                              ? "border-[2px] rounded-[10px] border-[#4A012E]"
-                              : "border-[2px]  rounded-[10px]  border-transparent"
-                          }
+                          className={item.id == number ? "border-[2px] rounded-[10px] border-[#4A012E]" : "border-[2px]  rounded-[10px]  border-transparent"}
                           onClick={() => {
                             handleClick(item.id);
                           }}
                           key={index}
                         >
-                          <Fade
-                            triggerOnce
-                            damping={0.1}
-                            direction="down"
-                            delay={300}
-                          >
+                          <Fade triggerOnce damping={0.1} direction="down" delay={300}>
                             <Profiles man={item.men} id={item.id} />
                           </Fade>
                         </div>
@@ -171,17 +139,9 @@ export default function Home() {
               </div>
             </div>
           </Slide>
+          <Button onClick={handleEntry} />
 
-          <Image
-            src={"/Images/Mobile_CouplePic.svg"}
-            style={{ width: "100%", height: "40%" }}
-            width={200}
-            height={200}
-            className=" lg:hidden block mt-10 scale-90"
-            alt="Couple Image"
-          />
-
-          <Button onClick={handleEntry}/>
+          <Image src={"/Images/Mobile_CouplePic.svg"} style={{ width: "100%", height: "40%" }} width={200} height={200} className=" lg:hidden block mt-10 scale-90" alt="Couple Image" />
         </div>
       </div>
     </main>
