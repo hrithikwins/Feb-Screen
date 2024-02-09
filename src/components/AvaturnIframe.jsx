@@ -27,6 +27,8 @@ const AvaturnIframe = ({ userName, setRpmFrame, setReadyPlayerUrl }) => {
     }
   };
 
+
+
   useEffect(() => {
     if (frame.current === null || frame.current === undefined) return;
     frame.current?.setAttribute("src", `https://demo.avaturn.dev/create/proceed`);
