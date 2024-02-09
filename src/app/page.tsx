@@ -144,6 +144,7 @@ const [glbFile, setGlbFile] = useState<any>(undefined);
               </div>
             </div>
           </Slide>
+
           <Button onClick={handleEntry} />
           <AvatarButton onClick={() => setRpmFrame(true)} />
           {isRmFrame && <AvaturnIframe userName={name ?? "hrithik"} setRpmFrame={setRpmFrame} setReadyPlayerUrl={setGlbFile} />}
