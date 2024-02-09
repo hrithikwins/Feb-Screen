@@ -29,7 +29,7 @@ const AvaturnIframe = ({ userName, setRpmFrame, setReadyPlayerUrl }) => {
 
   useEffect(() => {
     if (frame.current === null || frame.current === undefined) return;
-    frame.current?.setAttribute("src", `https://demo.avaturn.dev`);
+    frame.current?.setAttribute("src", `https://demo.avaturn.dev/create/proceed`);
     // frame.current.setAttribute("src", `https://${subdomain}.readyplayer.me/avatar?frameApi&darkTheme`);
 
     function subscribe(event) {
