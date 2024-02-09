@@ -1,5 +1,7 @@
 "use client";
 import Button from "@/components/Button";
+import AvaturnIframe from "@/components/AvaturnIframe";
+import AvatarButton from "@/components/AvatarButton";
 import Image from "next/image";
 import { useState } from "react";
 import { Fade, Slide } from "react-awesome-reveal";
@@ -70,6 +72,9 @@ export default function Home() {
 
 
   }
+
+const [isRmFrame, setRpmFrame] = useState<boolean>(false);
+const [glbFile, setGlbFile] = useState<any>(undefined);
   const [name, setName] = useState("");
   return (
     <main className="min-h-screen  flex items-center lg:px-20 px-4   py-10 lg:py-0  justify-center bg-[#fff3f8]">
@@ -140,7 +145,8 @@ export default function Home() {
             </div>
           </Slide>
           <Button onClick={handleEntry} />
-
+          <AvatarButton onClick={() => setRpmFrame(true)} />
+          {isRmFrame && <AvaturnIframe userName={name ?? "hrithik"} setRpmFrame={setRpmFrame} setReadyPlayerUrl={setGlbFile} />}
           <Image src={"/Images/Mobile_CouplePic.svg"} style={{ width: "100%", height: "40%" }} width={200} height={200} className=" lg:hidden block mt-10 scale-90" alt="Couple Image" />
         </div>
       </div>
